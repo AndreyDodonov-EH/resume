@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CV — Andrey Dodonov — Terminal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --bg: #0d1117;
+    --surface: #161b22;
+    --border: #30363d;
+    --text: #c9d1d9;
+    --dim: #8b949e;
+    --green: #3fb950;
+    --cyan: #58a6ff;
+    --yellow: #d29922;
+    --orange: #f0883e;
+    --purple: #bc8cff;
+    --red: #f85149;
+    --comment: #6e7681;
+  }
+
+  html { font-size: 9px; }
+
+  body {
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--text);
+    background: #010409;
+    display: flex;
+    justify-content: center;
+    padding: 24px;
+    min-height: 100vh;
+  }
+
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 2mm;
+    box-shadow: 0 0 60px rgba(56,139,253,.08);
+    overflow: hidden;
+  }
+
+  .title-bar {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 2mm 4mm;
+    display: flex;
+    align-items: center;
+    gap: 2mm;
+  }
+
+  .dot { width: 3mm; height: 3mm; border-radius: 50%; }
+  .dot.r { background: var(--red); }
+  .dot.y { background: var(--yellow); }
+  .dot.g { background: var(--green); }
+
+  .title-bar .path {
+    margin-left: 3mm;
+    font-size: 7pt;
+    color: var(--dim);
+  }
+
+  .content {
+    padding: 6mm 8mm 10mm;
+  }
+
+  .prompt { color: var(--green); }
+  .flag { color: var(--yellow); }
+  .string { color: var(--cyan); }
+  .kw { color: var(--purple); }
+  .cmt { color: var(--comment); font-style: italic; }
+
+  .header-block {
+    margin-bottom: 4mm;
+    line-height: 1.6;
+    font-size: 8.5pt;
+  }
+
+  .header-block .ascii-name {
+    font-size: 11pt;
+    font-weight: 700;
+    color: var(--green);
+    line-height: 1.2;
+    margin-bottom: 1mm;
+  }
+
+  .section {
+    margin-top: 4mm;
+  }
+
+  .section-head {
+    font-size: 8pt;
+    font-weight: 700;
+    color: var(--bg);
+    background: var(--green);
+    display: inline-block;
+    padding: .3mm 2mm;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 2mm;
+  }
+
+  .profile-text {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 8.5pt;
+    color: var(--dim);
+    line-height: 1.6;
+    border-left: 2px solid var(--border);
+    padding-left: 3mm;
+    margin-top: 1mm;
+  }
+
+  .profile-text strong { color: var(--text); }
+
+  .job { margin-top: 2.5mm; }
+
+  .job-line {
+    font-size: 8.5pt;
+    display: flex;
+    gap: 2mm;
+    flex-wrap: wrap;
+  }
+
+  .job-line .role { color: var(--cyan); font-weight: 700; }
+  .job-line .at { color: var(--dim); }
+  .job-line .company { color: var(--orange); }
+  .job-line .dates { color: var(--comment); margin-left: auto; }
+
+  .job-desc {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 7.5pt;
+    color: var(--comment);
+    margin-top: .5mm;
+    margin-bottom: 1mm;
+  }
+
+  .group-title {
+    font-size: 8pt;
+    color: var(--yellow);
+    margin-top: 1.5mm;
+    margin-bottom: .5mm;
+  }
+
+  .group-title::before { content: '## '; color: var(--comment); }
+
+  .bullet-list { list-style: none; padding: 0; }
+
+  .bullet-list li {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 8pt;
+    color: var(--text);
+    line-height: 1.5;
+    padding-left: 4mm;
+    position: relative;
+    margin-bottom: .6mm;
+  }
+
+  .bullet-list li::before {
+    content: '>';
+    position: absolute;
+    left: 0;
+    color: var(--green);
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+  }
+
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3mm;
+    margin-top: 1mm;
+  }
+
+  .skill-block { margin-bottom: 2mm; }
+
+  .skill-label {
+    font-size: 7pt;
+    color: var(--purple);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: .5mm;
+  }
+
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1mm;
+  }
+
+  .skill-tag {
+    font-size: 7pt;
+    padding: .4mm 1.5mm;
+    border: 1px solid var(--border);
+    border-radius: 1mm;
+    color: var(--dim);
+    background: var(--surface);
+  }
+
+  .edu-entry {
+    margin-bottom: 1.5mm;
+    font-size: 8pt;
+  }
+
+  .edu-entry .edu-name { color: var(--cyan); font-weight: 500; }
+  .edu-entry .edu-detail { color: var(--comment); font-size: 7.5pt; }
+
+  .lang-row {
+    font-size: 8pt;
+    margin-bottom: .3mm;
+  }
+
+  .lang-row .ln { color: var(--text); }
+  .lang-row .lv { color: var(--comment); }
+
+  .bottom-bar {
+    margin-top: 5mm;
+    padding-top: 2mm;
+    border-top: 1px solid var(--border);
+    display: flex;
+    gap: 5mm;
+    font-size: 7.5pt;
+    color: var(--comment);
+  }
+
+  .bottom-bar a { color: var(--cyan); text-decoration: none; }
+
+  @media print {
+    body { background: var(--bg); padding: 0; }
+    .page { box-shadow: none; border: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+  <div class="title-bar">
+    <span class="dot r"></span>
+    <span class="dot y"></span>
+    <span class="dot g"></span>
+    <span class="path">~/andrey-dodonov/cv.md</span>
+  </div>
+
+  <div class="content">
+    <div class="header-block">
+      <div class="ascii-name">$ whoami<br>Andrey Dodonov</div>
+      <span class="cmt">// Advanced Software Engineer</span><br>
+      <span class="cmt">// Embedded · Blockchain · Full Stack · Industrial IoT</span>
+    </div>
+
+    <div class="section">
+      <div class="section-head">Profile</div>
+      <p class="profile-text">
+        <strong>12+ years</strong> of system design with constrained resources,
+        specializing in device drivers, industrial IoT, full-stack web, and blockchain.
+        Deep understanding of low-level protocols and efficient software design.
+        Programmed client and server web devices with under 1&nbsp;MB footprint.
+        Filed patent on delivering rich web interfaces over arbitrary non-IP links.
+        Polkadot Blockchain Academy graduate, cum laude.
+      </p>
+    </div>
+
+    <div class="section">
+      <div class="section-head">Experience</div>
+
+      <div class="job">
+        <div class="job-line">
+          <span class="role">Advanced Software Engineer</span>
+          <span class="at">@</span>
+          <span class="company">Endress+Hauser Group</span>
+          <span class="dates">2014 &ndash; Present</span>
+        </div>
+        <div class="job-desc">Germany &mdash; industrial measurement &amp; automation: embedded firmware, web UIs, and DevOps for field devices</div>
+
+        <div class="group-title">Architecture &amp; Patents</div>
+        <ul class="bullet-list">
+          <li>Designed and patented a socket abstraction that tunnels web traffic over arbitrary non-IP links &mdash; Bluetooth, serial, proprietary buses</li>
+          <li>Built complete client &amp; server web stacks for industrial sensors with under 1 MB total footprint</li>
+          <li>Contributed upstream to Zephyr RTOS (TCP/IP stack, drivers)</li>
+          <li>Integrated industrial protocols: Ethernet/IP, PROFINET, Modbus/TCP</li>
+        </ul>
+
+        <div class="group-title">Security &amp; Compliance</div>
+        <ul class="bullet-list">
+          <li>Hired as &ldquo;fireman&rdquo; on a safety-critical oil &amp; gas sensor &mdash; tracked down complex bugs across 10 interconnected embedded chips, then implemented SIL3-certified features with formal verification</li>
+          <li>Achieved Cyber Resilience Act compliance; survived external pen-test with zero findings</li>
+        </ul>
+
+        <div class="group-title">Developer Experience &amp; Tooling</div>
+        <ul class="bullet-list">
+          <li>Drove company-wide Git migration (1,000+ engineers) off legacy version control</li>
+          <li>Migrated front-end component library from React to Lit: average bundle dropped 10&times; (2&nbsp;MB &rarr; 200&nbsp;KB)</li>
+          <li>Introduced containerized development for embedded &mdash; quick onboarding, reproducible builds</li>
+          <li>Reduced vendor lock-in across compilers, IDEs, and toolchains</li>
+        </ul>
+
+        <div class="group-title">Prototyping &amp; Deep Dives</div>
+        <ul class="bullet-list">
+          <li>Prototyped devices with NB-IoT, LTE-M, Wi-Fi, BLE &mdash; all under 1 MB</li>
+          <li>Built AR prototype on HoloLens: fused Bluetooth, Wi-Fi, factory layouts and 3D mesh</li>
+          <li>Added multi-sensor fusion to an AI-powered flood prediction system</li>
+          <li>Optimized cloud data pipelines end-to-end &mdash; from JS sort through V8 internals to CPU cache locality</li>
+          <li>Migrated cloud services from Heroku to GCP / Azure / on-prem</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-line">
+          <span class="role">Freelance Consultant</span>
+          <span class="at">@</span>
+          <span class="company">BusyBytes GmbH</span>
+          <span class="dates">2016 &ndash; Present</span>
+        </div>
+        <div class="job-desc">Germany &mdash; apps, device protocols, and blockchain infrastructure</div>
+        <ul class="bullet-list">
+          <li>Real-time DB sync for a real estate app (ImmoApp) &mdash; bridged legacy systems to live data</li>
+          <li>Rewrote BLE protocol for a smart cycling lamp (Lupine) &mdash; made it robust and user-friendly</li>
+          <li>Hardened Linux environments for Polkadot validator staking &mdash; secure, unattended, production-grade</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-head">Skills</div>
+      <div class="two-col">
+        <div>
+          <div class="skill-block">
+            <div class="skill-label">Systems &amp; Embedded</div>
+            <div class="skill-tags">
+              <span class="skill-tag">C/C++</span>
+              <span class="skill-tag">Rust</span>
+              <span class="skill-tag">Zephyr RTOS</span>
+              <span class="skill-tag">STM32</span>
+              <span class="skill-tag">NRF</span>
+              <span class="skill-tag">SIL3</span>
+              <span class="skill-tag">NB-IoT</span>
+              <span class="skill-tag">LTE-M</span>
+              <span class="skill-tag">Wi-Fi</span>
+              <span class="skill-tag">BLE</span>
+              <span class="skill-tag">Ethernet</span>
+            </div>
+          </div>
+          <div class="skill-block">
+            <div class="skill-label">Blockchain</div>
+            <div class="skill-tags">
+              <span class="skill-tag">Polkadot-API</span>
+              <span class="skill-tag">Polkadot SDK</span>
+              <span class="skill-tag">JAM</span>
+              <span class="skill-tag">EVM</span>
+              <span class="skill-tag">Solidity</span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="skill-block">
+            <div class="skill-label">Web &amp; Full Stack</div>
+            <div class="skill-tags">
+              <span class="skill-tag">Lit</span>
+              <span class="skill-tag">React</span>
+              <span class="skill-tag">Vite</span>
+              <span class="skill-tag">JS/TS</span>
+              <span class="skill-tag">Node.js</span>
+              <span class="skill-tag">REST</span>
+              <span class="skill-tag">WS</span>
+              <span class="skill-tag">HTTP</span>
+              <span class="skill-tag">TCP/IP</span>
+            </div>
+          </div>
+          <div class="skill-block">
+            <div class="skill-label">Test &amp; DevOps</div>
+            <div class="skill-tags">
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">C#</span>
+              <span class="skill-tag">Docker</span>
+              <span class="skill-tag">Jenkins</span>
+              <span class="skill-tag">GitHub Actions</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-head">Education</div>
+      <div class="edu-entry">
+        <span class="edu-name">Polkadot Blockchain Academy (PBA) Campus</span> <span class="cmt">cum laude</span>
+        <div class="edu-detail">Hochschule Luzern (HSLU) &middot; 2025</div>
+      </div>
+      <div class="edu-entry">
+        <span class="edu-name">M.Sc. Computer Science &amp; Engineering</span> <span class="cmt">cum laude</span>
+        <div class="edu-detail">Southern Federal University &middot; 2008&ndash;2014</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-head">Languages</div>
+      <div class="lang-row"><span class="ln">English</span> <span class="lv">// proficient</span></div>
+      <div class="lang-row"><span class="ln">German</span> <span class="lv">// advanced</span></div>
+      <div class="lang-row"><span class="ln">Russian</span> <span class="lv">// proficient</span></div>
+    </div>
+
+    <div class="bottom-bar">
+      <span>aadodonov@gmail.com</span>
+      <span>github.com/AndreyDodonov-EH</span>
+      <span>linkedin.com/in/andrey-dodonov</span>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
