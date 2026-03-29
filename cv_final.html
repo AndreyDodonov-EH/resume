@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CV — Andrey Dodonov</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --dark:       #1b1b2f;
+    --accent:     #1f5f8b;
+    --sidebar-bg: #1b2838;
+    --sb-text:    #c8d6e0;
+    --sb-head:    #6db8d4;
+    --sb-skill:   #8cc4db;
+    --sb-dim:     #9fb8c8;
+    --sb-meta:    #7a9aad;
+    --sb-border:  #2d4a5e;
+    --sb-item:    #b8cad6;
+    --sb-edu:     #d0dce5;
+    --main-text:  #3a3a3a;
+    --main-light: #888888;
+    --summary-fg: #444444;
+  }
+
+  @page {
+    size: A4;
+    margin: 0;
+  }
+
+  html, body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 8pt;
+    color: #2d2d2d;
+    line-height: 1.35;
+    background: #e8e8e8;
+  }
+
+  .page {
+    width: 210mm;
+    height: 297mm;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 66mm 1fr;
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.15);
+  }
+
+  @media print {
+    html, body { background: white; }
+    .page { box-shadow: none; margin: 0; }
+  }
+
+  /* ── SIDEBAR ── */
+  .sidebar {
+    background: var(--sidebar-bg);
+    padding: 12mm 5mm 8mm 6mm;
+    color: var(--sb-text);
+    overflow: hidden;
+  }
+
+  .sidebar h1 {
+    font-size: 17pt;
+    font-weight: 700;
+    color: white;
+    letter-spacing: 0.5pt;
+    line-height: 1.15;
+    margin-bottom: 1.5mm;
+  }
+
+  .sidebar .subtitle {
+    font-size: 8pt;
+    color: var(--sb-head);
+    letter-spacing: 0.3pt;
+  }
+
+  .sb-section-title {
+    margin-top: 3.5mm;
+    font-size: 7.5pt;
+    font-weight: 700;
+    color: var(--sb-head);
+    letter-spacing: 1pt;
+    text-transform: uppercase;
+    margin-bottom: 1mm;
+  }
+  .sb-section-title::after {
+    content: '';
+    display: block;
+    width: 16mm;
+    height: 0;
+    border-top: 0.4pt solid var(--sb-border);
+    margin-top: 1mm;
+    margin-bottom: 1.2mm;
+  }
+
+  .sb-item {
+    font-size: 8.5pt;
+    color: var(--sb-item);
+    margin-bottom: 0.3mm;
+  }
+
+  .sb-skill-group {
+    margin-bottom: 2mm;
+  }
+  .sb-skill-group .label {
+    font-size: 8pt;
+    font-weight: 700;
+    color: var(--sb-skill);
+  }
+  .sb-skill-group .skills {
+    font-size: 8pt;
+    color: var(--sb-dim);
+  }
+
+  .sb-edu {
+    margin-bottom: 2.5mm;
+  }
+  .sb-edu .title {
+    font-size: 8.5pt;
+    font-weight: 700;
+    color: var(--sb-edu);
+  }
+  .sb-edu .meta {
+    font-size: 8pt;
+    color: var(--sb-meta);
+  }
+
+  .sb-lang {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.3mm;
+  }
+  .sb-lang .name {
+    font-size: 8.5pt;
+    color: var(--sb-text);
+  }
+  .sb-lang .level {
+    font-size: 8pt;
+    color: var(--sb-meta);
+    font-style: italic;
+  }
+
+  /* ── MAIN ── */
+  .main {
+    background: white;
+    padding: 12mm 10mm 8mm 9mm;
+    overflow: hidden;
+  }
+
+  .main > .role {
+    font-size: 11.5pt;
+    font-weight: 700;
+    color: var(--accent);
+  }
+
+  .main > .tags {
+    font-size: 7.5pt;
+    color: #777;
+    letter-spacing: 0.3pt;
+    margin-top: 0.8mm;
+  }
+
+  .main-section-title {
+    margin-top: 2.5mm;
+    font-size: 9pt;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: 0.8pt;
+    text-transform: uppercase;
+    padding-bottom: 0.6mm;
+    border-bottom: 1pt solid var(--accent);
+    margin-bottom: 1.5mm;
+  }
+
+  .profile {
+    font-size: 8.5pt;
+    color: var(--summary-fg);
+    text-align: justify;
+    line-height: 1.4;
+  }
+
+  .job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.3mm;
+  }
+  .job-header .title {
+    font-size: 8.5pt;
+    font-weight: 700;
+    color: var(--dark);
+  }
+  .job-header .dates {
+    font-size: 7.5pt;
+    color: var(--main-light);
+    white-space: nowrap;
+  }
+
+  .job-company {
+    font-size: 7.5pt;
+    color: var(--accent);
+    font-style: italic;
+    margin-bottom: 1mm;
+  }
+
+  .bullet {
+    display: grid;
+    grid-template-columns: 2.5mm 1fr;
+    margin-bottom: 0.6mm;
+    align-items: start;
+  }
+  .bullet .dot {
+    font-size: 5.5pt;
+    color: var(--accent);
+    line-height: 1;
+    padding-top: 0.5mm;
+  }
+  .bullet .body {
+    font-size: 8.5pt;
+    color: var(--main-text);
+  }
+  .bullet .body strong a,
+  .bullet .body a {
+    color: var(--main-text);
+  }
+
+  .sub-bullet {
+    display: grid;
+    grid-template-columns: 5mm 2mm 1fr;
+    margin-bottom: 0.3mm;
+    align-items: start;
+  }
+  .sub-bullet .dash {
+    font-size: 5pt;
+    color: var(--accent);
+    line-height: 1;
+    padding-top: 0.8mm;
+  }
+  .sub-bullet .body {
+    font-size: 8pt;
+    color: var(--main-text);
+  }
+
+  .spacer { height: 1.5mm; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ════ SIDEBAR ════ -->
+  <div class="sidebar">
+    <h1>Andrey<br>Dodonov</h1>
+    <div class="subtitle">Advanced Software Engineer</div>
+
+    <!-- Contact -->
+    <div class="sb-section-title">Contact</div>
+    <div class="sb-item">aadodonov@gmail.com</div>
+    <div class="sb-item">github.com/AndreyDodonov-EH</div>
+    <div class="sb-item">linkedin.com/in/andrey-dodonov</div>
+
+    <!-- Skills -->
+    <div class="sb-section-title">Skills</div>
+
+    <div class="sb-skill-group">
+      <div class="label">Systems &amp; Embedded</div>
+      <div class="skills">C/C++, Rust,<br>Zephyr RTOS,<br>STM32, NRF,<br>SIL3 &amp; Ex-safety,<br>NB-IoT, LTE-M, Wi-Fi,<br>BLE, Ethernet</div>
+    </div>
+
+    <div class="sb-skill-group">
+      <div class="label">Web &amp; Full Stack</div>
+      <div class="skills">Lit, React, Vite,<br>JS/TS, Node.js,<br>REST, WS, HTTP,<br>TCP/IP</div>
+    </div>
+
+    <div class="sb-skill-group">
+      <div class="label">Blockchain</div>
+      <div class="skills">Polkadot-API, Polkadot SDK, JAM,<br>EVM, Solidity</div>
+    </div>
+
+    <div class="sb-skill-group">
+      <div class="label">Test &amp; DevOps</div>
+      <div class="skills">Python, C#,<br>Docker, containerized development,<br>Jenkins, GitHub Actions</div>
+    </div>
+
+    <!-- Education -->
+    <div class="sb-section-title">Education</div>
+
+    <div class="sb-edu">
+      <div class="title">Polkadot Blockchain Academy (PBA)<br>Campus<br>cum laude</div>
+      <div class="meta">Hochschule Luzern (HSLU) · 2025</div>
+    </div>
+
+    <div class="sb-edu">
+      <div class="title">M.Sc. Computer Science &amp;<br>Engineering<br>cum laude</div>
+      <div class="meta">Southern Federal University<br>2008 – 2014</div>
+    </div>
+
+    <!-- Languages -->
+    <div class="sb-section-title">Languages</div>
+    <div class="sb-lang"><span class="name">English</span><span class="level">proficient</span></div>
+    <div class="sb-lang"><span class="name">German</span><span class="level">advanced</span></div>
+    <div class="sb-lang"><span class="name">Russian</span><span class="level">proficient</span></div>
+  </div>
+
+  <!-- ════ MAIN ════ -->
+  <div class="main">
+    <div class="role">Advanced Software Engineer</div>
+    <div class="tags">Embedded · Blockchain · Full Stack · Industrial IoT</div>
+
+    <div class="main-section-title">Profile</div>
+    <div class="profile">
+      <strong>12+ years</strong> of system design with constrained resources, specializing in
+      embedded, web development and blockchain technologies.
+      Deep understanding of low-level, protocols, efficient software design.
+      Programmed client and server web devices with under 1 Megabyte footprint.
+      Filed patent on transferring web-pages over arbitrary non-IP protocols.
+      Wrangling AI since GPT 3.5.
+      Polkadot Blockchain Academy Campus graduate (cum laude).
+    </div>
+
+    <!-- Experience -->
+    <div class="main-section-title">Experience</div>
+
+    <div class="job-header">
+      <span class="title">Advanced Software Engineer</span>
+      <span class="dates">2014 – Present</span>
+    </div>
+    <div class="job-company">Endress+Hauser Group · Germany</div>
+
+    <div class="bullet">
+      <span class="dot">▪</span>
+      <span class="body">
+        <strong><a href="https://www.de.endress.com/en/field-instruments-overview/level-measurement/qwx43-fermentation-monitor?t.tabId=product-overview">Family of web-connected industrial devices for liquid analyzis</a></strong><br>
+        Architecture and implementation of secure, web-compatible industrial sensors:
+      </span>
+    </div>
+    <div class="sub-bullet"><span></span><span class="dash">–</span><span class="body">Enabled rich Web UI for tiny devices (patent filed, architecture supports sockets of arbitrary protocols on non-ip direct links, allowing HTTP/WS interfaces for devices without TCP/IP stack)</span></div>
+    <div class="sub-bullet"><span></span><span class="dash">–</span><span class="body">Open-source contributions to the underlying ZephyrRTOS, specializing in networking</span></div>
+    <div class="sub-bullet"><span></span><span class="dash">–</span><span class="body">Added security features, CRA compliance, successfully surviving pen-test and ensuring zero security incidents in the field</span></div>
+    <div class="sub-bullet"><span></span><span class="dash">–</span><span class="body">Supported integration of industrial IP-based protocols</span></div>
+
+    <div class="bullet">
+      <span class="dot">▪</span>
+      <span class="body"><strong>Organisational improvements</strong></span>
+    </div>
+    <div class="sub-bullet"><span></span><span class="dash">–</span><span class="body">Introduced containerized development with embedded devices, allowing quick on-boarding for new members, eliminating works-on-my-machine and mitigating supply chain attacks</span></div>
+    <div class="sub-bullet"><span></span><span class="dash">–</span><span class="body">Reduced vendor-lock on multiple fronts (compilers, version controles, IDEs etc.)</span></div>
+    <div class="sub-bullet"><span></span><span class="dash">–</span><span class="body">Migrated company-wide front-end component library from React to Lit, reducing average front-end size 10 times from 2Megabytes to 200KBytes, enabling full-featured front-end for devices with limited resources</span></div>
+    <div class="sub-bullet"><span></span><span class="dash">–</span><span class="body">Pushed company-wide (1000+ users) migration to Git from legacy systems</span></div>
+    <div class="sub-bullet"><span></span><span class="dash">–</span><span class="body">Contributed to open-source Git wrappers, including popular GitExtensions</span></div>
+
+    <div class="bullet">
+      <span class="dot">▪</span>
+      <span class="body">
+        <strong>Augmented reality prototype for Hololens for industries</strong><br>
+        Integrating Unity, low-level protocols and Hololens features, allowing to look into storage facilities and vessels as if they were transparent, based on bluetooth, wifi and 3d-mesh
+      </span>
+    </div>
+
+    <div class="bullet">
+      <span class="dot">▪</span>
+      <span class="body">
+        <strong>Prototypes of embedded devices with various connectivity</strong><br>
+        Prototyped devices with communication NB-IOT, LTE-M, Wi-Fi, BLE with memory footprints of under 1 MB, selected most efficient and secure approaches for systems
+      </span>
+    </div>
+
+    <div class="bullet">
+      <span class="dot">▪</span>
+      <span class="body">
+        <strong><a href="https://www.de.endress.com/en/endress-hauser-group/capabilities-efficient-safe-operations/netilion-dynamischer-pegel">Flood Predictor</a></strong><br>
+        Added multi-sensor fusion to AI-powered flood prediction system
+      </span>
+    </div>
+
+    <div class="bullet">
+      <span class="dot">▪</span>
+      <span class="body">
+        <strong><a href="https://www.endress.com/en/field-instruments-overview/netilion-iiot">Cloud platform</a></strong><br>
+        Integrated cloud services, web pages and sensors into coherent systems,
+        performed migrations to cheaper hostings (from Heroku to GCP, Azure and on-prem),
+        optimized data-heavy algorithms for cloud services
+        (deep-dive from JS sorting to JS engines to underlying C++ libraries to cache locality)
+      </span>
+    </div>
+
+    <div class="bullet">
+      <span class="dot">▪</span>
+      <span class="body">
+        <strong><a href="https://www.endress.com/en/endress-hauser-group/events-training/online-seminars/tank-gauging-solutions">Safety criticial oil and gas sensor</a></strong><br>
+        Hired as "fireman", quickly onboarded,
+        fixed multiple complex bugs spread across 10 embedded chips in a single system,
+        implemented safety-criticial features and tests, allowing SIL3 certification
+      </span>
+    </div>
+
+    <div class="spacer"></div>
+
+    <div class="job-header">
+      <span class="title">Freelance Consultant — Web &amp; Mobile</span>
+      <span class="dates">2016 – Present</span>
+    </div>
+    <div class="job-company">BusyBytes GmbH · Germany</div>
+
+    <div class="bullet">
+      <span class="dot">▪</span>
+      <span class="body">
+        <strong>Real estate managememt app (<a href="https://immodigi.ch/en/">ImmoApp</a>)</strong><br>
+        Added real-time data base synchronization, allowing on-boarding clients with legacy systems
+      </span>
+    </div>
+
+    <div class="bullet">
+      <span class="dot">▪</span>
+      <span class="body">
+        <strong>Smart biking lamp with Ble (<a href="https://www.lupinelights.com/">Lupine</a>)</strong><br>
+        Improved lamp to app protocol, making communication robust and user-friendly
+      </span>
+    </div>
+
+    <div class="bullet">
+      <span class="dot">▪</span>
+      <span class="body">
+        <strong>Staking</strong><br>
+        Hardened Linux environments for blockchain staking
+      </span>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
