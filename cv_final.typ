@@ -204,9 +204,9 @@
       justify: true,
       leading: 0.4em,
       text(8.5pt, fill: summary-fg)[
-        *12+ years* of experiences designing systems with constrained resources,\
+        *12+ years* of experience designing systems with constrained resources,\
         specializing in embedded, web development and blockchain technologies.\
-        Deep understanding of low-level, protocols, efficient resource utilization.\
+        Deep understanding of low-level protocols and efficient resource utilization.\
         Programmed client and server web devices with under 1 Megabyte footprint.\
         Filed patent on transferring web-pages over arbitrary non-IP protocols.\
         Wrangling AI since GPT 3.5.\
@@ -220,9 +220,9 @@
     #job-company("Endress+Hauser Group · Germany")
 
     #bullet[
-      *#link("https://www.de.endress.com/en/field-instruments-overview/level-measurement/qwx43-fermentation-monitor?t.tabId=product-overview")[Family of web-connected industrial devices for liquid analyzis]*
-    - Enabled rich Web UI for tiny devices (patent filed, architecture supports sockets of arbitrary protocols on non-ip direct links, allowing HTTP/WS interfaces for devices without TCP/IP stack)
-    - Open-source contributions to the underlying ZephyrRTOS, specializing in networking
+      *#link("https://www.de.endress.com/en/field-instruments-overview/level-measurement/qwx43-fermentation-monitor?t.tabId=product-overview")[Family of web-connected industrial devices for liquid analysis]*
+    - Enabled rich Web UI for tiny devices (patent filed, architecture supports sockets of arbitrary protocols on non-IP direct links, allowing HTTP/WS interfaces for devices without TCP/IP stack)
+    - Open-source contributions to the underlying Zephyr RTOS, specializing in networking
     - Added security features, CRA compliance, successfully surviving pen-test and ensuring zero security incidents in the field
     - Supported integration of industrial IP-based protocols
     ]
@@ -230,7 +230,7 @@
     #bullet[
       *Organisational improvements*
     - Introduced containerized development with embedded devices, allowing quick on-boarding for new members, eliminating works-on-my-machine and mitigating supply chain attacks
-    - Reduced vendor-lock on multiple fronts (compilers, version controles, IDEs etc.)
+    - Reduced vendor-lock on multiple fronts (compilers, version control, IDEs etc.)
     - Migrated company-wide front-end component library from React to Lit, reducing average front-end size 10 times from 2Megabytes to 200KBytes, enabling full-featured front-end for devices with limited resources
     - Pushed company-wide (1000+ users) migration to Git from legacy systems
     - Contributed to open-source Git wrappers, including popular GitExtensions
@@ -238,13 +238,13 @@
 
 
     #bullet[
-      *Augmented reality prototype for Hololens for industries*
-      Integrating Unity, low-level protocols and Hololens features, allowing to look into storage facilities and vessels as if they were transparent, based on bluetooth, wifi and 3d-mesh
+      *Augmented reality prototype for HoloLens for industries*
+      Integrating Unity, low-level protocols and HoloLens features, allowing to look into storage facilities and vessels as if they were transparent, based on Bluetooth, Wi-Fi and 3D mesh
     ]
     
     #bullet[
       *Prototypes of embedded devices with various connectivity*
-      Prototyped devices with communication NB-IOT, LTE-M, Wi-Fi, BLE with memory footprints of under 1 MB, selected most efficient and secure approaches for systems
+      Prototyped devices with communication NB-IoT, LTE-M, Wi-Fi, BLE with memory footprints of under 1 MB, selected most efficient and secure approaches for systems
       ]
    
 
@@ -262,10 +262,10 @@
     ]
 
     #bullet[
-      *#link("https://www.endress.com/en/endress-hauser-group/events-training/online-seminars/tank-gauging-solutions")[Safety criticial oil and gas sensor]*\
+      *#link("https://www.endress.com/en/endress-hauser-group/events-training/online-seminars/tank-gauging-solutions")[Safety critical oil and gas sensor]*\
       Hired as "fireman", quickly onboarded,
       fixed multiple complex bugs spread across 10 embedded chips in a single system,
-      implemented safety-criticial features and tests, allowing SIL3 certification
+      implemented safety-critical features and tests, allowing SIL3 certification
     ]
 
     #v(2.5mm)
@@ -274,12 +274,12 @@
     #job-company("BusyBytes GmbH · Germany")
 
     #bullet[
-      *Real estate managememt app (#link("https://immodigi.ch/en/")[ImmoApp])*\
-      Added real-time data base synchronization, allowing on-boarding clients with legacy systems
+      *Real estate management app (#link("https://immodigi.ch/en/")[ImmoApp])*\
+      Added real-time database synchronization, allowing onboarding of clients with legacy systems
     ]
 
     #bullet[
-      *Smart biking lamp with Ble (#link("https://www.lupinelights.com/")[Lupine])*\
+      *Smart biking lamp with BLE (#link("https://www.lupinelights.com/")[Lupine])*\
       Improved lamp to app protocol, making communication robust and user-friendly
     ]
 
