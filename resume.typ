@@ -189,12 +189,12 @@
     // Profile
     #main-section-title("Profile")
     #par(justify: true, leading: 0.55em, text(9pt, fill: summary-fg)[
-      *12+ years* of system design with constrained resources, \
-     specializing in device drivers, industrial IoT solutions, full stack and blockchain technologies. \
+      *12+ years* of system design with constrained resources, specializing in\ embedded, web development and blockchain technologies. \
       Deep understanding of low-level, protocols, efficient software design. \
       Programmed client and server web devices with under 1 Megabyte footprint. \
       Filed patent on transferring web-pages over arbitrary non-IP protocols.\
       Polkadot Blockchain Academy Campus graduate (cum laude). \
+      Wrangling AI since GPT 3.5.
     ])
 
     // Experience
@@ -250,8 +250,7 @@ based on bluetooth, wifi, factory layout and 3d-mesh
       *Safety criticial oil and gas sensor*\
       hired as "fireman", fixed multiple complex bugs spread across 10 embedded chips in a single system
       implemented safety-criticial features and tests, allowing SIL3 certification (Safety Integrity Level)
-      added extensive automated tests for both actual and formal verification
-      integrated sensors with different measurement principles on embedded interfacing
+      added extensive automated tests.
      ]
 
      
