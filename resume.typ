@@ -280,9 +280,8 @@
     #job-company("BusyBytes GmbH · Germany")
 
     #bullet[
-      *Prototyped stablecoin smartcontracts*\
-      Prototyped stablecoin smartcontracts in different blockckchains,
-      studied legal aspects of stablecoins and their regulation
+      *Prototyped stablecoin smart contracts*\
+      Developed and compared implementations across multiple blockchains, studied legal and regulatory aspects
     ]
 
     #bullet[
