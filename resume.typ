@@ -117,7 +117,7 @@
     // Name
     #text(18pt, weight: "bold", fill: white, tracking: 0.5pt)[Andrey\ Dodonov]
     #v(2mm)
-    #text(8pt, fill: sb-head, tracking: 0.3pt)[Senior Systems Engineer]
+    #text(8pt, fill: sb-head, tracking: 0.3pt)[Advanced Software Engineer]
 
     // Contact
     #sb-section-title("Contact")
@@ -133,9 +133,8 @@
        Zephyr RTOS,\
         STM32, NRF,\
         SIL3 & Ex-safety,\
-        driver development,\
         NB-IoT, LTE-M, Wi-Fi,\
-        Bluetooth Low Energy, Ethernet],
+        BLE, Ethernet],
     )
     #sb-skill-group(
         "Web & Full Stack",
@@ -146,7 +145,7 @@
     )
     #sb-skill-group(
       "Blockchain",
-      [Polkadot SDK, Polkadot-API, JAM,\
+      [Polkadot-API, Polkadot SDK, JAM,\
        EVM, Solidity],
     )
     #sb-skill-group(
@@ -161,10 +160,6 @@
     #sb-edu(
       [Polkadot Blockchain Academy (PBA) \ Campus \ cum laude],
       [Hochschule Luzern (HSLU) · 2025],
-    )
-    #sb-edu(
-      [PBA-X],
-      [2024],
     )
     #sb-edu(
       [M.Sc. Computer Science &\ Engineering\ cum laude],
@@ -187,7 +182,7 @@
     inset: main-pad,
   )[
     // Header
-    #text(12pt, weight: "bold", fill: accent)[Senior Systems Engineer]
+    #text(12pt, weight: "bold", fill: accent)[Advanced Software Engineer]
     #v(1mm)
     #text(7.5pt, fill: rgb("#777777"), tracking: 0.3pt)[Embedded · Blockchain · Full Stack · Industrial IoT]
 
@@ -199,60 +194,85 @@
       Deep understanding of low-level, protocols, efficient software design. \
       Programmed client and server web devices with under 1 Megabyte footprint. \
       Filed patent on transferring web-pages over arbitrary non-IP protocols.\
-      Pushed company-wide migration to git (1000+ people).\
-      Polkadot Blockchain Academy Campus graduate (*cum laude*). \
+      Polkadot Blockchain Academy Campus graduate (cum laude). \
     ])
 
     // Experience
     #main-section-title("Experience")
 
-    #job-header("Lead Developer / Advanced Software Engineer", "2014 – Present")
+    #job-header("Advanced Software Engineer", "2014 – Present")
     #job-company("Endress+Hauser Group · Germany")
 
+    
+
     #bullet[
-      *Web-over-Serial Architecture* _(Patent pending)_ — Designed and implemented
-      SOL/PAL, a layered protocol architecture enabling browser-native HTTP access to embedded device
-      web interfaces over non-IP transports (UART, BLE). Conceived the abstraction model, built
-      the Zephyr custom socket layer and C\# Device Bridge proxy, and drove the invention disclosure
-      through to patent filing.
+      *Family of web-connected industrial devices for liquid analyzis*\
+      Architecture and implementation of secure, web-compatible industrial sensors:
+- Enabled rich Web UI for tiny devices\ (patent filed, architecture supports sockets of arbitrary protocols on non-ip direct links, allowing rich Web-UI for devices without TCP/IP stack)
+- Open-source contributions to the underlying ZephyrRTOS, including TCP/IP stack
+- Added security features, CRA compliance, successfully surviving pen-test and ensuring zero security incidents in the field
+- Supported integration of industrial IP-based protocols (Ethernet/IP, Profinet)
     ]
     #bullet[
-      *Multi-Liquid Analyzer* 
-      web-based HMI (Lit/TypeScript/Vite), Zephyr RTOS, on
-      STM32H573 (Cortex-M33), REST API design (OpenAPI),
-      multi-protocol connectivity (PROFINET, Modbus/TCP, EtherNet/IP, CDI).
-      Docker-based CI/CD with GitHub Actions & HIL runners.
+      *Organisational improvements*\
+- Introduced containerized development with embedded devices, allowing quick on-boarding for new members, eliminating works-on-my-machine and mitigating supply chain attacks
+- Reduced vendor-lock on multiple fronts (compilers, version controles, IDEs etc.)
+- Migrated company-wide front-end component library from React to Lit, reducing average front-end size 10 times from 2Megabytes to 200KBytes, enabling full-featured front-end for devices with limited resources
+- Pushed company-wide (1000+ users) migration to Git from legacy systems, saving developer time
+- Contributed to open-source Git wrappers, including popular GitExtensions
     ]
-    #bullet[
-      *Fermentation Monitor* — Architect & team lead for Wi-Fi cloud-connected
-      real-time fermentation sensor. End-to-end ownership: firmware, connectivity, cloud integration.
-    ]
-    #bullet[
-      *Flood Predictor* — Consultant on AI-powered flood prediction system
-      using NB-IoT/LTE-M multi-sensor network.
-    ]
-    #bullet[
-      *Netilion · IIoT Radar · Smartblue · Tank Gauging* — Cloud platform development,
-      battery-powered IIoT level sensors, HoloLens AR prototype for factory device management,
-      SIL3/Ex-certified gas & oil monitoring systems with HART/Modbus/4-20mA.
-    ]
+
+     #bullet[
+      *Augmented reality prototype for Hololens for industries*\
+Integrating Unity, low-level protocols and Hololens features,
+allowing to look into storage facilities and vessels as if they were transparent, 
+based on bluetooth, wifi, factory layout and 3d-mesh
+     ]
+
+     #bullet[
+      *Prototypes of embedded devices with various connectivity*\
+      Prototyped devices with communication NB-IOT, LTE-M, Wi-Fi, BLE with memory footprints of under 1 MB, selected most efficient and secure approaches for systems with constrained resources
+     ]
+
+     #bullet[
+      *Flood Predictor*\
+      added multi-sensor fusion to AI-powered flood prediction system
+     ]
+
+     #bullet[
+      *Cloud platform*\
+      integrated cloud services, web pages and sensors into coherent systems
+      performed migrations to cheaper hostings (from Heroku to GCP, Azure and on-prem)
+      Optimized data-heavy algorithms for cloud services (deep-dive from JS sorting to JS engines to underlying C++ libraries to cache localit)
+     ]
+
+     #bullet[
+      *Safety criticial oil and gas sensor*\
+      hired as "fireman", fixed multiple complex bugs spread across 10 embedded chips in a single system
+      implemented safety-criticial features and tests, allowing SIL3 certification (Safety Integrity Level)
+      added extensive automated tests for both actual and formal verification
+      integrated sensors with different measurement principles on embedded interfacing
+     ]
+
+     
+     
 
     #v(2mm)
-    #job-header("Consultant — Web & Mobile", "Freelance")
+    #job-header("Freelance Consultant — Web & Mobile", "2016-present")
     #job-company("BusyBytes GmbH · Germany")
+    
     #bullet[
-      Consulted and supported the digital agency's web and mobile application development projects.
+      *Real estate managememt app (ImmoApp)*\
+- added real-time data base synchronization, allowing on-boarding clients with legacy systems
     ]
+#bullet[
+      *Smart biking lamp with Ble (Lupine)*\
+- improved lamp to app protocol, making communication robust and user-friendly
+]
+#bullet[
+      *Staking*\
+      hardened Linux environments for blockchain staking
+]
 
-    // Open Source & Research
-    #main-section-title("Open Source & Research")
-    #bullet[
-      *Notable open source contributions* — ZephyrOS, GitExtensions.
-    ]
-    #bullet[
-        *Patent* — filed patent on Web-over-Non-IP protocol architecture on direct links, \
-        allowing socket-based (e.g. HTTP/WS) access over arbitrary protocols, even simple ones such as Bluetooth, Serial,
-        etc. This allows serving a webpage from small devices, even headphones.
-    ]
   ],
 )
