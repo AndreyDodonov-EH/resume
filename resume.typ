@@ -174,8 +174,16 @@
 
     #sb-section-title("Education")
     #sb-education(
+      [JAM book club],
+      [online courses  · 2026],
+    )
+    #sb-education(
       [Polkadot Blockchain Academy (PBA)\ Campus\ cum laude],
       [Hochschule Luzern (HSLU) · 2025],
+    )
+    #sb-education(
+      [PBA-X academy],
+      [online course · 2025],
     )
     #sb-education(
       [M.Sc. Computer Science &\ Engineering\ cum laude],
@@ -220,7 +228,7 @@
     #job-company("Endress+Hauser Group · Germany")
 
     #bullet[
-      *#link("https://www.de.endress.com/en/field-instruments-overview/level-measurement/qwx43-fermentation-monitor?t.tabId=product-overview")[Family of web-connected industrial devices for liquid analysis]*
+      *#link("https://www.de.endress.com/en/field-instruments-overview/level-measurement/qwx43-fermentation-monitor?t.tabId=product-overview")[Family of web-connected devices for liquid analysis]*
     - Enabled rich Web UI for tiny devices (patent filed, architecture supports sockets of arbitrary protocols on non-IP direct links, allowing HTTP/WS interfaces for devices without TCP/IP stack)
     - Open-source contributions to the underlying Zephyr RTOS, specializing in networking
     - Added security features, CRA compliance, successfully surviving pen-test and ensuring zero security incidents in the field
@@ -228,7 +236,12 @@
     ]
 
     #bullet[
-      *Organisational improvements*
+      *C Compiler for custom ASIC*\
+      Fixed bugs and reduced output footprint of proprietary C compiler for custom ASIC
+    ]
+
+    #bullet[
+      *Organisational improvements*\
     - Introduced containerized development with embedded devices, allowing quick on-boarding for new members, eliminating works-on-my-machine and mitigating supply chain attacks
     - Reduced vendor-lock on multiple fronts (compilers, version control, IDEs etc.)
     - Migrated company-wide front-end component library from React to Lit, reducing average front-end size 10 times from 2Megabytes to 200KBytes, enabling full-featured front-end for devices with limited resources
@@ -236,23 +249,16 @@
     - Contributed to open-source Git wrappers, including popular GitExtensions
     ]
 
-
     #bullet[
-      *Augmented reality prototype for HoloLens for industries*
+      *Augmented reality prototype for HoloLens for industries*\
       Integrating Unity, low-level protocols and HoloLens features, allowing to look into storage facilities and vessels as if they were transparent, based on Bluetooth, Wi-Fi and 3D mesh
     ]
     
     #bullet[
-      *Prototypes of embedded devices with various connectivity*
+      *Prototypes of embedded devices with various connectivity*\
       Prototyped devices with communication NB-IoT, LTE-M, Wi-Fi, BLE with memory footprints of under 1 MB, selected most efficient and secure approaches for systems
       ]
    
-
-    #bullet[
-      *#link("https://www.de.endress.com/en/endress-hauser-group/capabilities-efficient-safe-operations/netilion-dynamischer-pegel")[Flood Predictor]*\
-      Added multi-sensor fusion to AI-powered flood prediction system
-    ]
-
     #bullet[
       *#link("https://www.endress.com/en/field-instruments-overview/netilion-iiot")[Cloud platform]*\
       Integrated cloud services, web pages and sensors into coherent systems,
@@ -270,8 +276,19 @@
 
     #v(2.5mm)
 
-    #job-header("Freelance Consultant — Web & Mobile", "2016 – Present")
+    #job-header("Freelance Consultant — Blockchain, Web & Mobile", "2016 – Present")
     #job-company("BusyBytes GmbH · Germany")
+
+    #bullet[
+      *Prototyped stablecoin smartcontracts*\
+      Prototyped stablecoin smartcontracts in different blockckchains,
+      studied legal aspects of stablecoins and their regulation
+    ]
+
+    #bullet[
+      *Staking*\
+      Hardened Linux environments for blockchain staking
+    ]
 
     #bullet[
       *Real estate management app (#link("https://immodigi.ch/en/")[ImmoApp])*\
@@ -283,9 +300,5 @@
       Improved lamp to app protocol, making communication robust and user-friendly
     ]
 
-    #bullet[
-      *Staking*\
-      Hardened Linux environments for blockchain staking
-    ]
   ],
 )
