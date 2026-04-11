@@ -174,6 +174,10 @@
 
     #sb-section-title("Education")
     #sb-education(
+      [BaselHack 2024 — Winner],
+      [hackathon · 2024],
+    )
+    #sb-education(
       [JAM book club],
       [online courses  · 2026],
     )

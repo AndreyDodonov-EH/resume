@@ -178,10 +178,6 @@
       [hackathon · 2024],
     )
     #sb-education(
-      [#link("https://rust-basel.ch/")[Rust Basel] — member],
-      [community · ongoing],
-    )
-    #sb-education(
       [Polkadot Blockchain Academy (PBA)\ Campus\ cum laude],
       [Hochschule Luzern (HSLU) · 2025],
     )
@@ -221,9 +217,8 @@
         Deep understanding of low-level protocols and efficient resource utilization.\
         Programmed client and server web devices with under 1 Megabyte footprint.\
         Filed patent on transferring web-pages over arbitrary non-IP protocols.\
-        Wrangling AI since GPT 3.5.\
         Polkadot Blockchain Academy Campus graduate (cum laude).\
-        Active Rust community member (Rust Basel).
+        Wrangling AI since GPT 3.5.\
       ],
     )
 
