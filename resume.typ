@@ -154,7 +154,7 @@
        BLE, Ethernet],
     )
     #sb-skill-group(
-      "Web & Full Stack",
+      "Web",
       [Lit, React, Vite,\
        JS/TS, Node.js,\
        REST, WS, HTTP,\
@@ -176,10 +176,6 @@
     #sb-education(
       [BaselHack 2024 — Winner],
       [hackathon · 2024],
-    )
-    #sb-education(
-      [JAM book club],
-      [online courses  · 2026],
     )
     #sb-education(
       [Polkadot Blockchain Academy (PBA)\ Campus\ cum laude],
@@ -221,7 +217,7 @@
         Deep understanding of low-level protocols and efficient resource utilization.\
         Programmed client and server web devices with under 1 Megabyte footprint.\
         Filed patent on transferring web-pages over arbitrary non-IP protocols.\
-        Wrangling AI since GPT 3.5.\
+        Wrangling AI since GPT 3.\
         Polkadot Blockchain Academy Campus graduate (cum laude).
       ],
     )
